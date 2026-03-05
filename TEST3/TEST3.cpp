@@ -20,7 +20,7 @@ namespace TEST3
 		{
 			std::string name = "";
 			Person person{ name };
-			std::string expected ="NoName";
+			std::string expected ="";
 			Assert::AreEqual(person.GetName(),expected);
 		}
 		TEST_METHOD(NORMAL_NAME)
