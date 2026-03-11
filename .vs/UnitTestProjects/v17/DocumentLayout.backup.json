@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{7ED1F8C3-247A-8F5D-606E-E5B660E90435}|TEST3\\TEST3.vcxproj|solutionrelative:TEST3\\TEST3.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{84E48706-FBDA-47DC-808C-49056A71C572}|moduleone\\moduleone.vcxproj|E:\\Projects gats\\UnitTestProjects\\moduleone\\person.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{84E48706-FBDA-47DC-808C-49056A71C572}|moduleone\\moduleone.vcxproj|solutionrelative:moduleone\\person.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8F307D65-077A-4B67-837E-3FA6AA02E430}|UnitTestProjects\\UnitTestProjects.vcxproj|E:\\Projects gats\\UnitTestProjects\\UnitTestProjects\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{8F307D65-077A-4B67-837E-3FA6AA02E430}|UnitTestProjects\\UnitTestProjects.vcxproj|solutionrelative:UnitTestProjects\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{84E48706-FBDA-47DC-808C-49056A71C572}|moduleone\\moduleone.vcxproj|E:\\Projects gats\\UnitTestProjects\\moduleone\\person.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{84E48706-FBDA-47DC-808C-49056A71C572}|moduleone\\moduleone.vcxproj|solutionrelative:moduleone\\person.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{84E48706-FBDA-47DC-808C-49056A71C572}|moduleone\\moduleone.vcxproj|E:\\Projects gats\\UnitTestProjects\\moduleone\\person.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -53,7 +53,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "person.cpp",
               "DocumentMoniker": "E:\\Projects gats\\UnitTestProjects\\moduleone\\person.cpp",
               "RelativeDocumentMoniker": "moduleone\\person.cpp",
@@ -95,22 +95,23 @@
               "RelativeDocumentMoniker": "TEST3\\TEST3.cpp",
               "ToolTip": "E:\\Projects gats\\UnitTestProjects\\TEST3\\TEST3.cpp",
               "RelativeToolTip": "TEST3\\TEST3.cpp",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABIAAAALAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-02-27T09:35:13.239Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Source.cpp",
               "DocumentMoniker": "E:\\Projects gats\\UnitTestProjects\\UnitTestProjects\\Source.cpp",
               "RelativeDocumentMoniker": "UnitTestProjects\\Source.cpp",
               "ToolTip": "E:\\Projects gats\\UnitTestProjects\\UnitTestProjects\\Source.cpp",
               "RelativeToolTip": "UnitTestProjects\\Source.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-02-27T08:35:36.263Z"
+              "WhenOpened": "2026-02-27T08:35:36.263Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",

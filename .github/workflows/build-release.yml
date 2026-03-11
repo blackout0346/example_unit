@@ -1,18 +1,36 @@
+name: Create GitHub Release
+
 on:
   push:
-    branches: [main]
-  workflow_dispatch:
-
-permissions:
-  contents: write
-  pull-requests: write
-
-name: release-please
+    tags:
+      - 'v*' # Trigger when a version tag (e.g., v1.0.0) is pushed
 
 jobs:
-  release-please:
-    runs-on: ubuntu-latest
+  build-and-release:
+    runs-on: windows-2025-vs2026
+    permissions:
+      contents: write # Allows the job to write to the repository
     steps:
-      - uses: googleapis/release-please-action@v4
-        with:
-          token: ${{ secrets.SECRETKEY}}
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    # ... Your build steps would go here to create artifacts ...
+    # e.g., run: ./gradlew assembleRelease
+      
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.SECRETKEY }}
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
+        body: |
+          Changes in this Release
+          - First Change
+          - Second Change
+        draft: false
+        prerelease: false
+        
+    # ... Steps to upload build assets would follow ...
+    # e.g., uses: actions/upload-release-asset@v1...
