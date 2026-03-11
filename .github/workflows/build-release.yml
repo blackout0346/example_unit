@@ -1,34 +1,51 @@
-name: Create GitHub Release
+name: Windows C++ Release
+
 
 on:
-  push:
+  create:
     tags:
-      - 'v*' # Trigger when a version tag (e.g., v1.0.0) is pushed
+      - 'v*'
 
 jobs:
-  build-and-release:
-    runs-on: windows-2025-vs2026
+  release:
+    runs-on: windows-latest
+    
     permissions:
-      contents: write # Allows the job to write to the repository
+      contents: write
+
     steps:
-    - name: Checkout code
+    - name: Checkout repository
       uses: actions/checkout@v4
-      
-    # ... Your build steps would go here to create artifacts ...
-    # e.g., run: ./gradlew assembleRelease
-      
-    - name: Create Release
-      id: create_release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.SECRETKEY }}
+
+    - name: Add msbuild to PATH
+      uses: microsoft/setup-msbuild@v2
+
+    - name: Setup Visual Studio environment
+      uses: ilammy/msvc-dev-cmd@v1.4.1
       with:
-        tag_name: ${{ github.ref }}
-        release_name: Release ${{ github.ref }}
-        body: |
-          Changes in this Release
-          - First Change
-          - Second Change
+        arch: x64
+
+    - name: Build Solution (Release)
+      run: msbuild UnitTestProjects.sln /p:Configuration=Release /p:Platform=x64
+
+    - name: Copy exe
+      run: |
+        mkdir artifacts
+        copy x64\Release\*.exe artifacts\
+
+
+    - name: Create Source Archive
+      run: |
+        powershell -Command "Compress-Archive -Path * -DestinationPath source.zip -Force"
+
+
+    - name: Create Release
+      uses: softprops/action-gh-release@v2
+      with:
+        name: Release ${{ github.ref_name }}
         draft: false
         prerelease: false
-        
+        generate_release_notes: true
+        files: |
+          source.zip
+          artifacts/*.exe
